@@ -1,12 +1,9 @@
 import turtle
 
-
 x = 0
 y = 0
 count = 4
-turtle.penup()
 
-turtle.pendown()
 while (y < 5):
     x = 0
     while(x < 5):
