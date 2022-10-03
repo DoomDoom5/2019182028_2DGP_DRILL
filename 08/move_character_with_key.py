@@ -15,7 +15,6 @@ def handle_events():
         if event.type == SDL_QUIT:
             running = False
         elif event.type == SDL_KEYDOWN :
-            idle = False
             if event.key == SDLK_RIGHT:
                 x_dir +=1
                 inverse = False
@@ -26,21 +25,18 @@ def handle_events():
                 y_dir += 1
             elif event.key == SDLK_DOWN:
                 y_dir -= 1
+
             elif event.key == SDLK_ESCAPE:
                 running = False
 
         elif event.type == SDL_KEYUP:
             if event.key == SDLK_RIGHT:
-                idle = True
                 x_dir -= 1
             elif event.key == SDLK_LEFT:
-                idle = True
                 x_dir += 1
             elif event.key == SDLK_UP:
-                idle = True
                 y_dir -= 1
             elif event.key == SDLK_DOWN:
-                idle = True
                 y_dir += 1
     pass
 
@@ -50,7 +46,6 @@ kpu_ground = load_image('TUK_GROUND.png')
 grass = load_image('grass.png')
 character = load_image('animation_sheet.png')
 inverse = False
-idle = True
 running = True
 x = KPU_WIDTH // 2
 y = KPU_HEIGHT // 2
@@ -64,7 +59,7 @@ while running:
     clear_canvas()
     kpu_ground.draw(KPU_WIDTH // 2, KPU_HEIGHT // 2)
 
-    if idle:
+    if x_dir == 0 and y_dir == 0:
         if inverse:
             character.clip_draw(frame * 100, 100 * 2, 100, 100, x, y)
         else:
