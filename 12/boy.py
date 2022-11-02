@@ -124,9 +124,9 @@ class AUTO_RUN:
 
     def draw(self):
         if self.face_dir == -1:
-            self.image.clip_composite_draw(self.frame * 100, 0, 100, 100, 0, '', self.x + 10, self.y + 10, 120, 120)
+            self.image.clip_composite_draw(self.frame * 100, 0, 100, 100, 0, '', self.x + 25, self.y + 25, 150, 150)
         else:
-            self.image.clip_composite_draw(self.frame * 100, 100, 100, 100, 0, '', self.x + 10 , self.y + 10, 120, 120)
+            self.image.clip_composite_draw(self.frame * 100, 100, 100, 100, 0, '', self.x + 25 , self.y + 25, 150, 150)
         pass
     pass
 
