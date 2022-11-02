@@ -134,7 +134,7 @@ class AUTO_RUN:
 
 #3 상태 변환 기술
 next_state = {
-    SLEEP: {RD : RUN , LD:RUN, RU:RUN, LD:RUN, TIMER:SLEEP},
+    SLEEP: {RD : RUN , LD:RUN, RU:RUN, LD:RUN, TIMER:SLEEP, A : SLEEP},
     IDLE : {RU: RUN, LU : RUN, RD : RUN, LD :RUN, TIMER:SLEEP, A : AUTO_RUN},
     RUN: {RU: IDLE, LU: IDLE, RD: IDLE, LD: IDLE, A : AUTO_RUN},
     AUTO_RUN : {RD: RUN , LD: RUN, RU: RUN, LD: RUN, A : IDLE},
