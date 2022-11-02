@@ -59,5 +59,5 @@ def handle_events():
         elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_ESCAPE):
             game_framework.quit()
         else:
-            boy.handle_events(event)
+            boy.handle_event(event)
 
