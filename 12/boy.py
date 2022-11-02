@@ -104,7 +104,7 @@ class AUTO_RUN:
     @staticmethod
     def exit(self):
         print('ENTER AUTO RUN')
-        self.face_dir = self.dir
+        self.dir = 0
         pass
 
     def do(self):
@@ -115,7 +115,7 @@ class AUTO_RUN:
             self.dir = 1
             self.face_dir = 1
         elif(self.x >= 800):
-            self.dir -= 1
+            self.dir = -1
             self.face_dir = -1
         self.x += self.dir
 
