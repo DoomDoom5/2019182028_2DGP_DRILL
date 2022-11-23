@@ -48,9 +48,9 @@ class Bird:
 
     def draw(self):
         if self.dir == -1:
-            self.image.clip_composite_draw(int(self.xframe) * 168,int(self.yframe) * 183, 168, 183, 0, 'h', self.x, self.y, 50, 50)
+            self.image.clip_composite_draw(int(self.xframe) * 170,int(self.yframe) * 180, 160, 180, 0, 'h', self.x, self.y, 50, 50)
         elif self.dir == 1:
-            self.image.clip_composite_draw(int(self.xframe) * 168,int(self.yframe) * 183, 168, 183, 0, ' ', self.x, self.y, 50, 50)
+            self.image.clip_composite_draw(int(self.xframe) * 170,int(self.yframe) * 180, 160, 180, 0, ' ', self.x, self.y, 50, 50)
 
         self.font.draw(self.x - 60, self.y + 50 , f'{get_time():.2f}',(255,255,0))
 
