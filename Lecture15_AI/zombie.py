@@ -22,19 +22,6 @@ class TargetMarker:
     def draw(self):
         self.image.draw(self.x, self.y, 50, 50)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 # zombie Run Speed
 PIXEL_PER_METER = (10.0 / 0.3)  # 10 pixel 30 cm
 RUN_SPEED_KMPH = 10.0  # Km / Hour
@@ -155,7 +142,6 @@ class Zombie:
         else:
             self.speed = 0
             return BehaviorTree.FAIL
-
         pass
 
     def flee_from_boy(self):
