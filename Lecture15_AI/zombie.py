@@ -160,23 +160,35 @@ class Zombie:
         pass
 
 
+   # def build_behavior_tree(self):
+   #     find_random_location_node = Leaf('Find Random Location', self.find_random_location)
+  #      move_to_node = Leaf('Move To', self.move_to)
+  #      play_beep_node = Leaf('Play Beep', self.play_beep)
+   #     wander_sequence = Sequence('Wander', find_random_location_node, move_to_node, play_beep_node)
+   #     find_ball_location_node = Leaf('Find Ball Location', self.find_ball_location)
+    #    eat_ball_sequence = Sequence('Eat Ball', find_ball_location_node, move_to_node, play_beep_node)
+#
+     #   wander_or_eat_ball_selector = Selector('Wander or Eat Ball', eat_ball_sequence, wander_sequence)
+
+    #    move_to_node = Leaf('Move to Boy', self.move_to_boy)
+     #   flee_from_boy_node = Leaf('Flee from Boy', self.flee_from_boy)
+     #   chase_or_flee_selector = Selector('Chase or Flee Boy', move_to_node, flee_from_boy_node)
+
+     #   final_selector = Selector('Final', chase_or_flee_selector, wander_or_eat_ball_selector)
+     #   self.bt = BehaviorTree(final_selector)
+
     def build_behavior_tree(self):
         find_random_location_node = Leaf('Find Random Location', self.find_random_location)
         move_to_node = Leaf('Move To', self.move_to)
-        play_beep_node = Leaf('Play Beep', self.play_beep)
-        wander_sequence = Sequence('Wander', find_random_location_node, move_to_node, play_beep_node)
-        find_ball_location_node = Leaf('Find Ball Location', self.find_ball_location)
-        eat_ball_sequence = Sequence('Eat Ball', find_ball_location_node, move_to_node, play_beep_node)
 
-        wander_or_eat_ball_selector = Selector('Wander or Eat Ball', eat_ball_sequence, wander_sequence)
+        wander_sequence = Sequence('Wander', find_random_location_node, move_to_node)
 
         move_to_node = Leaf('Move to Boy', self.move_to_boy)
         flee_from_boy_node = Leaf('Flee from Boy', self.flee_from_boy)
         chase_or_flee_selector = Selector('Chase or Flee Boy', move_to_node, flee_from_boy_node)
 
-        final_selector = Selector('Final', chase_or_flee_selector, wander_or_eat_ball_selector)
+        final_selector = Selector('Final', chase_or_flee_selector, wander_sequence)
         self.bt = BehaviorTree(final_selector)
-
 
     def get_bb(self):
         return self.x - 50, self.y - 50, self.x + 50, self.y + 50
